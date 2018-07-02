@@ -1,0 +1,122 @@
+<!--
+    IDEA: Build a survey form to gather customer and associate information about feeding habits>
+-->
+
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" type="text/css" href="./css/style.css" media="screen"/>
+        <title id = "title"> A Survey Form Layout </title>
+   
+    </header>
+
+    <h1> Survey Form </h1>
+
+<body>
+
+        
+        </div>
+        <div class = "container">
+
+                <div id="description" >This is a brief survey to gather employee information regarding pet feeding.</div>
+        
+
+            <form id="survey-form" method="POST" action="/survey">
+
+                <div class = "questionField" id="name">
+                       <label for="name" id="name-label">Name:</label>  <input type= "text" name="name" placeholder="Your name"> 
+                </div>
+                
+                <div class = "questionField" id="email">
+                    <label for="email" id="email-label"> Email: </label> <input type ="text" name="email" placeholder="Your email"> 
+             </div>
+            
+            
+             <div class = "questionField" id="number">
+                <label for="empID" id="number-label"> Employee ID: </label> <input type ="number" name="employeeNum" placeholder="Your employee id"> 
+            </div>
+
+            
+
+
+                <div class = "questionField">
+                    <label for= "pet reason">  Which best describes your reason for owning a pet?</label><br>   
+                       <br><select id= "dropdown">
+
+                         <option value="sportComp">Sports Competition</option> 
+                         <option value= "showDog" >Show Dog</option> 
+                         <option value="breeder" >Breeder</option> 
+                         <option value="hunting" >Hunting/Trapping</option> 
+                         <option value="service">Service Animal</option> 
+                         <option value="companion">Companion</option>
+    
+                       </select> 
+                </div>
+                <div class = "questionField">
+                      <label for="feeding focus">  What is the primary fous of your feeding?</label><br>
+                        
+                        <br> <select id ="focus" name="feedingFocus" class="dropdown" >
+                                <option value="nutrition"> Optimal Nutrition </option> 
+                                <option value="dental">Dental</option>
+                                <option value="weightManagement"> Weight Management </option> 
+                                <option value="allergies"> Allergies </option>"
+                                <option value="palatability">Palatability</option> 
+                                </select>
+                </div>
+
+                <div class = "questionField">
+                    <label for= "budget"> What is your biweekly budget for petfood?<br> </label>
+                    <ul >
+                        <li><input name= "radButton" value = "1" type= "radio"> 20 - 30</li>
+                        <li><input name= "radButton" value = "2" type= "radio">31 - 40</li>
+                        <li><input name= "radButton" value = "3" type= "radio">41-50</li>
+                        <li><input name= "radButton" value = "4" type= "radio">51-60</li>
+                        <li><input name= "radButton" value = "5" type= "radio">60-70</li>
+                        <li><input name= "radButton" value = "6" type= "radio">71+</li>
+
+                    </ul>
+                
+                </div>
+
+                <div class = "questionField">
+                    <label for= "aviod"> Are there any ingredients you are trying to avoid feeding your pet? </label><br>
+                    <ul>
+                            <li><input name="avoid" value = "1" type="checkbox"> Chicken</li>
+                            <li><input name="avoid" value = "1" type="checkbox"> All Poultry</li>
+                            <li><input name="avoid" value = "1" type="checkbox"> Grains</li>
+                            <li><input name="avoid" value = "1" type="checkbox"> Beef</li>
+                            <li><input name="avoid" value = "1" type="checkbox"> Lamb</li>
+                        
+                    </ul>
+
+                <div class = "questionField">
+                   <label for="comments">Any additional comments, questions you may have?</label>  <br>
+
+                    <textarea name= "comments" id="comments">Your comment here...</textarea>
+                </div>
+                </div>
+
+
+
+                
+                <div id="submit">
+                    <input type="submit" value = "submit"  onclick="alert('Submission Has Been Logged')"> 
+             </div>
+
+                
+            </form>
+           
+            
+            
+            
+        </div>
+
+        
+
+
+</body>
+
+
+
+    
+</html>
