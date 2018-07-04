@@ -24,16 +24,16 @@
             <form id="survey-form" method="POST" action="/survey">
 
                 <div class = "questionField" id="name">
-                       <label for="name" id="name-label">Name:</label>  <input type= "text" name="name" placeholder="Your name"> 
+                       <label for="name" id="name-label">Name:</label>  <input type= "text" name="name" value="name" placeholder="Your name"> 
                 </div>
                 
                 <div class = "questionField" id="email">
-                    <label for="email" id="email-label"> Email: </label> <input type ="text" name="email" placeholder="Your email"> 
+                    <label for="email" id="email-label"> Email: </label> <input type ="text" name="email" value="email" placeholder="Your email"> 
              </div>
             
             
              <div class = "questionField" id="number">
-                <label for="empID" id="number-label"> Employee ID: </label> <input type ="number" name="employeeNum" placeholder="Your employee id"> 
+                <label for="empID" id="number-label"> Employee ID: </label> <input type ="number" name="employeeNum" value="empId" placeholder="Your employee id"> 
             </div>
 
             
@@ -43,12 +43,12 @@
                     <label for= "pet reason">  Which best describes your reason for owning a pet?</label><br>   
                        <br><select id= "dropdown">
 
-                         <option value="sportComp">Sports Competition</option> 
-                         <option value= "showDog" >Show Dog</option> 
-                         <option value="breeder" >Breeder</option> 
-                         <option value="hunting" >Hunting/Trapping</option> 
-                         <option value="service">Service Animal</option> 
-                         <option value="companion">Companion</option>
+                         <option name = "petReason" value="sportComp">Sports Competition</option> 
+                         <option name = "petReason" value= "showDog" >Show Dog</option> 
+                         <option name = "petReason" value="breeder" >Breeder</option> 
+                         <option name = "petReason" value="hunting" >Hunting/Trapping</option> 
+                         <option name = "petReason" value="service">Service Animal</option> 
+                         <option name = "petReason" value="companion">Companion</option>
     
                        </select> 
                 </div>
@@ -56,23 +56,23 @@
                       <label for="feeding focus">  What is the primary fous of your feeding?</label><br>
                         
                         <br> <select id ="focus" name="feedingFocus" class="dropdown" >
-                                <option value="nutrition"> Optimal Nutrition </option> 
-                                <option value="dental">Dental</option>
-                                <option value="weightManagement"> Weight Management </option> 
-                                <option value="allergies"> Allergies </option>"
-                                <option value="palatability">Palatability</option> 
+                                <option name = "feedingFocus" value="1"> Optimal Nutrition </option> 
+                                <option name = "feedingFocus" value="2">Dental</option>
+                                <option name = "feedingFocus" value="3"> Weight Management </option> 
+                                <option name = "feedingFocus" value="4"> Allergies </option>"
+                                <option name = "feedingFocus" value="5">Palatability</option> 
                                 </select>
                 </div>
 
                 <div class = "questionField">
                     <label for= "budget"> What is your biweekly budget for petfood?<br> </label>
                     <ul >
-                        <li><input name= "radButton" value = "1" type= "radio"> 20 - 30</li>
-                        <li><input name= "radButton" value = "2" type= "radio">31 - 40</li>
-                        <li><input name= "radButton" value = "3" type= "radio">41-50</li>
-                        <li><input name= "radButton" value = "4" type= "radio">51-60</li>
-                        <li><input name= "radButton" value = "5" type= "radio">60-70</li>
-                        <li><input name= "radButton" value = "6" type= "radio">71+</li>
+                        <li><input name= "budget" value = "1" type= "radio"> 20 - 30</li>
+                        <li><input name= "budget" value = "2" type= "radio">31 - 40</li>
+                        <li><input name= "budget" value = "3" type= "radio">41-50</li>
+                        <li><input name= "budget" value = "4" type= "radio">51-60</li>
+                        <li><input name= "budget" value = "5" type= "radio">60-70</li>
+                        <li><input name= "budget" value = "6" type= "radio">71+</li>
 
                     </ul>
                 
@@ -82,10 +82,10 @@
                     <label for= "aviod"> Are there any ingredients you are trying to avoid feeding your pet? </label><br>
                     <ul>
                             <li><input name="avoid" value = "1" type="checkbox"> Chicken</li>
-                            <li><input name="avoid" value = "1" type="checkbox"> All Poultry</li>
-                            <li><input name="avoid" value = "1" type="checkbox"> Grains</li>
-                            <li><input name="avoid" value = "1" type="checkbox"> Beef</li>
-                            <li><input name="avoid" value = "1" type="checkbox"> Lamb</li>
+                            <li><input name="avoid" value = "2" type="checkbox"> All Poultry</li>
+                            <li><input name="avoid" value = "3" type="checkbox"> Grains</li>
+                            <li><input name="avoid" value = "4" type="checkbox"> Beef</li>
+                            <li><input name="avoid" value = "5" type="checkbox"> Lamb</li>
                         
                     </ul>
 
