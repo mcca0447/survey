@@ -33,8 +33,10 @@ app.post('/survey', urlencodedParser, function(req, res){
 
    try {
     const client =  pool.connect()
-    var sql = "INSERT INTO response_table (employee_id, name, email, reason_for_owning, feeding_goal, budget, avoiding, comments) VALUES('"+req.body.empId+"','"+req.body.email+"', '"+req.body.petReason+"', '"+req.body.feedingFocus+"','"+req.body.budget+"','"+req.body.avoid+"', '"+req.body.comments+"' )";
-    const result =  client.query("INSERT INTO response_table (employee_id, name, email, reason_for_owning, feeding_goal, budget, avoiding, comments) VALUES('"+req.body.empId+"','"+req.body.email+"', '"+req.body.petReason+"', '"+req.body.feedingFocus+"','"+req.body.budget+"','"+req.body.avoid+"', '"+req.body.comments+"' )");
+   
+
+    var queryStatement = "INSERT INTO response_table (employee_id, name, email, reason_for_owning, feeding_goal, budget, avoiding, comments) VALUES('"+req.body.empId+"','"+req.body.email+"', '"+req.body.petReason+"', '"+req.body.feedingFocus+"','"+req.body.budget+"','"+req.body.avoid+"', '"+req.body.comments+"' )";
+    const result =  client.query(queryStatement);
     res.render('pages/db', {result: result.rows}); 
     console.log(result);
     client.release();
