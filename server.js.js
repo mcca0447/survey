@@ -33,7 +33,7 @@ app.post('/survey', urlencodedParser, async function(req, res){
 
    try {
     const client = await  pool.connect()
-    var queryStatement = "INSERT INTO response_table (employee_id, name, email, reason_for_owning, feeding_goal, budget, avoiding, comments) VALUES('"+req.body.empId+"','"+req.body.email+"', '"+req.body.employeeNum+"', +req.body.petReason+"', '"+req.body.feedingFocus+"','"+req.body.budget+"','"+req.body.avoid+"', '"+req.body.comments+"' )";
+    var queryStatement = "INSERT INTO response_table (employee_id, name, email, reason_for_owning, feeding_goal, budget, avoiding, comments) VALUES('"+req.body.empId+"','"+req.body.email+"', '"+req.body.petReason+"', '"+req.body.feedingFocus+"','"+req.body.budget+"','"+req.body.avoid+"', '"+req.body.comments+"' )";
     const result =  await client.query(queryStatement);
     client.release();
   } catch (err) {
