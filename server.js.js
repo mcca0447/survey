@@ -30,17 +30,22 @@ app.get('/index', function(req, res){
 
 app. use(urlencodedParser) ;
 app.post('/index', async function(req, res){
+
+  var name = req.body.name
+  var email = req.body.email
+  var reason = req.body.petReason
+  var feedGoal = req.body.feedingFocus
+  var budget =  req.body.budget
+  var avoiding = req.body.avoiding
+  var comments = req.body.comments
+
+  console.log(name + email + reason + " " + feedGoal + budget + avoiding + comments);
+
    console.log(req.body);
    res.sendFile(__dirname +'/index.html', {qs: req.query});
-   var name = req.body.name
-   var email = req.body.email
-   var reason = req.body.petReason
-   var feedGoal = req.body.feedingFocus
-   var budget =  req.body.budget
-   var avoiding = req.body.avoiding
-   var comments = req.body.comments
+ 
 
-   console.log(name + email + reason + " " + feedGoal + budget + avoiding + comments);
+  
 
    try {
     const client = await  pool.connect()
