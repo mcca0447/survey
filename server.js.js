@@ -17,8 +17,8 @@ const pool = new Pool({
 
 
 
-app.use( bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
+
 app.set('view engine', 'ejs');
 
 app.use('/css', express.static('css'));
@@ -28,7 +28,8 @@ app.get('/index', function(req, res){
     res.sendFile(__dirname +'/index.html');
 });
 
-app.post('/index', urlencodedParser, async function(req, res){
+app. use(urlencodedParser) ;
+app.post('/index', async function(req, res){
    console.log(req.body);
    res.sendFile(__dirname +'/index.html', {qs: req.query});
 
