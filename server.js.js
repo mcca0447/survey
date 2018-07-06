@@ -17,7 +17,8 @@ const pool = new Pool({
 
 
 
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+app.use( bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 
 app.use('/css', express.static('css'));
