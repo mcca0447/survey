@@ -27,7 +27,7 @@ app.get('/index', function(req, res){
     res.sendFile(__dirname +'/index.html');
 });
 
-app.post('/survey', urlencodedParser, async function(req, res){
+app.post('/index', urlencodedParser, async function(req, res){
    console.log(req.body);
    res.sendFile(__dirname +'/index.html', {qs: req.query});
 
