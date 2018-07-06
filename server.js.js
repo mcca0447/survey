@@ -30,7 +30,7 @@ app.get('/index', function(req, res){
 
 app. use(urlencodedParser) ;
 app.post('/index', async function(req, res){
-
+console.log("TEST 2 START")
   var name = req.body.name
   var email = req.body.email
   var reason = req.body.petReason
@@ -38,9 +38,9 @@ app.post('/index', async function(req, res){
   var budget =  req.body.budget
   var avoiding = req.body.avoiding
   var comments = req.body.comments
-
+  console.log("TEST2 PASSED")
   console.log(name + email + reason + " " + feedGoal + budget + avoiding + comments);
-
+  console.log("TEST 3 PASSED")
    console.log(req.body);
    res.sendFile(__dirname +'/index.html', {qs: req.query});
  
