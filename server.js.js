@@ -38,7 +38,7 @@ console.log("TEST 2 START")
   var reason = req.body.petReason
   var feedGoal = req.body.feedingFocus
   var budget =  req.body.budget
-  var avoiding = req.body.avoiding
+  var avoiding = req.body.avoid
   var comments = req.body.comments
   console.log("TEST2 PASSED")
   console.log(name + email + reason + " " + feedGoal + budget + avoiding + comments);
