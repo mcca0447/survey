@@ -31,8 +31,9 @@ app.get('/index', function(req, res){
 });
 
 app. use(urlencodedParser) ;
+
+
 app.post('/index', async function(req, res){
-console.log("TEST 2 START")
   var id =  req.body.empId
   var name = req.body.name
   var email = req.body.email
@@ -41,14 +42,8 @@ console.log("TEST 2 START")
   var budget =  req.body.budget
   var avoiding = req.body.avoid
   var comments = req.body.comments
-  console.log("TEST2 PASSED")
-  console.log(id + name + email + reason + feedGoal + budget + avoiding + comments);
-  console.log("TEST 3 PASSED")
-   console.log(req.body);
-   res.sendFile(__dirname +'/index.html', {qs: req.query});
- 
-
   
+   res.sendFile(__dirname +'/index.html', {qs: req.query});
 
    try {
     const client = await  pool.connect()
@@ -80,14 +75,30 @@ app.get('/db', async (req, res) => {
 
 
 
-//IF there is a POST request
-    //Pull data from the form
-    //write field values to appropriate backend objs
-    //Connect to postgress database
-    //write entry to database using object values
-    //close connection to db
-    //fetch the matching entry from the database
-    //write it to a confirmation screen
+app.get('/stats', async (req, res) =>{
+  try {
+    const client = await pool.connect()
+    
+    
+    const budgetAvg = await client.query('SELECT to_char (AVG (budget)) AS average_budget FROM response_table;');
+    const topThreeIngr = await client.query('');
+    const topReason = await client.query('');
+    const commentsList = await client.query('');
+
+    
+    const 
+    res.render('pages/stats', {budgetAvg: budgetAvg});
+    console.log(result);
+    client.release();
+  } catch (err) {
+    console.error(err);
+    res.send("Error " + err);
+  }
+
+
+
+
+});
 
 
 
