@@ -92,7 +92,7 @@ app.get('/stats', async (req, res) =>{
 
 
     res.render('pages/stats', {budgetAvg: budgetAvg});
-    console.log(result);
+    
     client.release();
   } catch (err) {
     console.error(err);
