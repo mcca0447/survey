@@ -80,10 +80,10 @@ app.get('/stats', async (req, res) =>{
     const client = await pool.connect()
     
     //Test the output of these queries
-    const budgetAvg = await client.query('SELECT AVG(budget) AS average_budget FROM response_table;');
-    const topThreeIngr = await client.query('SELECT avoiding, COUNT(*) AS occurrence FROM  response_table GROUP BY avoiding ORDER BY occurrence DESC LIMIT 3;');
-   const topReason = await client.query('SELECT reason_for_owning, COUNT(*) AS top_reason FROM  response_table GROUP BY reason_for_owning ORDER BY top_reason DESC LIMIT 1;');
-   const commentsList = await client.query('SELECT comments FROM response_table');
+  const budgetAvg = await client.query('SELECT AVG(budget) AS average_budget FROM response_table;');
+  const topThreeIngr = await client.query('SELECT avoiding, COUNT(*) AS occurrence FROM  response_table GROUP BY avoiding ORDER BY occurrence DESC LIMIT 3;');
+  const topReason = await client.query('SELECT reason_for_owning, COUNT(*) AS top_reason FROM  response_table GROUP BY reason_for_owning ORDER BY top_reason DESC LIMIT 1;');
+  const commentsList = await client.query('SELECT comments FROM response_table');
 
     console.log(budgetAvg);
     console.log(topThreeIngr);
@@ -91,8 +91,8 @@ app.get('/stats', async (req, res) =>{
     console.log(commentsList);
 
     //I want to load a web page that displays the results of each of my queries using embedded javascript
-     
-    res.render('pages/stats', {results: budgetAvg, });
+
+    res.render('pages/stats', {results: budgetAvg, topThreeIngr, topReason, commentsList});
     
     client.release();
   } catch (err) {
