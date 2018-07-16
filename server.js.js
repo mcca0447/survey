@@ -90,8 +90,9 @@ app.get('/stats', async (req, res) =>{
     console.log(topReason);
     console.log(commentsList);
 
-
-    res.render('pages/stats', {budgetAvg: budgetAvg});
+    //I want to load a web page that displays the results of each of my queries using embedded javascript
+     
+    res.render('pages/stats', {results: budgetAvg, });
     
     client.release();
   } catch (err) {
