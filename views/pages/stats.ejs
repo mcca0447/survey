@@ -22,9 +22,9 @@
 
               <p> The average employee budget for dog food is: <%= JSON.stringify(avgBudget.rows[0].average_budget, null, 4) %> </p>   <!-- Embedded ejs to load result-->
             
-              <p> Most employees own dogs for: <%= JSON.stringify(topReas) %> </p>  <!-- Embedded ejs to load result-->
+              <p> Most employees own dogs for: <%= JSON.stringify(topReas.rows[0].reason_for_owning, null, 4) %> </p>  <!-- Embedded ejs to load result-->
                 
-              <p> The top 3 ingredients to avoid are: <%= JSON.stringify(top3)  %> </p> <!-- Embedded ejs to load result-->
+              <p> The top 3 ingredients to avoid are: <%= JSON.stringify(top3.rows[0].avoiding, null, 4)  %> </p> <!-- Embedded ejs to load result-->
                 
               <p> Additional comments are:   </p>  <!-- Embedded ejs to load result-->
 
