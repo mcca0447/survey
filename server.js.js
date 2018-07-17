@@ -80,10 +80,10 @@ app.get('/stats', async (req, res) =>{
     const client = await pool.connect()
     
     //stores the result of these run queries as variables
-  const budgetAvg = await client.query('SELECT AVG(budget) AS average_budget FROM response_table;');
-  const topThreeIngr = await client.query('SELECT avoiding, COUNT(*) AS occurrence FROM  response_table GROUP BY avoiding ORDER BY occurrence DESC LIMIT 3;');
-  const topReason = await client.query('SELECT reason_for_owning, COUNT(*) AS top_reason FROM  response_table GROUP BY reason_for_owning ORDER BY top_reason DESC LIMIT 1;');
-  const commentsList = await client.query('SELECT comments FROM response_table');
+  var budgetAvg = await client.query('SELECT AVG(budget) AS average_budget FROM response_table;');
+  var topThreeIngr = await client.query('SELECT avoiding, COUNT(*) AS occurrence FROM  response_table GROUP BY avoiding ORDER BY occurrence DESC LIMIT 3;');
+  var topReason = await client.query('SELECT reason_for_owning, COUNT(*) AS top_reason FROM  response_table GROUP BY reason_for_owning ORDER BY top_reason DESC LIMIT 1;');
+  var commentsList = await client.query('SELECT comments FROM response_table');
 
     console.log(budgetAvg);
     console.log(topThreeIngr);
