@@ -26,7 +26,14 @@
                 
               <p> The top 3 ingredients to avoid are: <%= JSON.stringify(top3.rows[0].avoiding, null, 4)  %> </p> <!-- Embedded ejs to load result-->
                 
-              <p> Additional comments are:   </p>  <!-- Embedded ejs to load result-->
+              <p> Additional comments are:   </p>  
+              
+              <ul>
+                <% comments.forEach(function(r) { %>
+                    <li><%= r.comments%></li>
+            
+                <% }); %>
+             </ul>
 
             
         </div>
