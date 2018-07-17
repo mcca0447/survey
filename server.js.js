@@ -92,9 +92,9 @@ app.get('/stats', async (req, res) =>{
 
     //I want to load a web page that displays the results of each of my queries using embedded javascript
 
-
+ var metrics = {avgBudget:budgetAvg, top3: topThreeIngr, topReas: topReason, comments: commentsList.rows}
     //Passes an object to the render function that contains the results of the queries encapsulated in seperate properties
-    res.render('pages/stats', {avgBudget:budgetAvg, top3: topThreeIngr, topReas: topReason, comments: commentsList.rows});
+    res.render('pages/stats', metrics);
     
     client.release();
   } catch (err) {
